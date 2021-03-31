@@ -8,49 +8,33 @@ float ADCdata;
 
 
 void ulcd_display(int i){
-if (i==0){
-// basic printf demo = 16 by 18 characters on screen
-    uLCD.text_width(2.5); //4X size text
-    uLCD.text_height(2.5);
-    uLCD.locate(0,2);
-    uLCD.color(GREEN);
-    uLCD.printf("  100Hz"); //Default Green on black text
-
-    uLCD.text_width(2.5); //4X size text
-    uLCD.text_height(2.5);
-    uLCD.locate(0,4);
-    uLCD.color(GREEN);
-    uLCD.printf("  200Hz"); //Default Green on black text
-  
-    uLCD.text_width(2.5); //4X size text
-    uLCD.text_height(2.5);
-    uLCD.locate(0,6);
-    uLCD.color(GREEN);
-    uLCD.printf("  300Hz"); //Default Green on black text
-}
-
-     
-else if(i==1){
+if(i==1){
 
 // basic printf demo = 16 by 18 characters on screen
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
-    uLCD.locate(0,2);
+    uLCD.locate(0,0);
     uLCD.color(RED);
-    uLCD.printf("  100Hz"); //Default Green on black text
-  
+    uLCD.printf("  1Hz"); //Default Green on black text
+    
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,2);
+    uLCD.color(GREEN);
+    uLCD.printf("  2Hz"); //Default Green on black text
+
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,4);
     uLCD.color(GREEN);
-    uLCD.printf("  200Hz"); //Default Green on black text
-
+    uLCD.printf("  10Hz"); //Default Green on black text
+    
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(GREEN);
-    uLCD.printf("  300Hz"); //Default Green on black text
-     
+    uLCD.printf("  11Hz"); //Default Green on black text
 
 }
 
@@ -58,42 +42,81 @@ else if(i ==2){
 // basic printf demo = 16 by 18 characters on screen
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
-    uLCD.locate(0,2);
+    uLCD.locate(0,0);
     uLCD.color(GREEN);
-    uLCD.printf("  100Hz"); //Default Green on black text
+    uLCD.printf("  1Hz"); //Default Green on black text
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,2);
+    uLCD.color(RED);
+    uLCD.printf("  2Hz"); //Default Green on black text
 
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,4);
-    uLCD.color(RED);
-    uLCD.printf("  200Hz"); //Default Green on black text
+    uLCD.color(GREEN);
+    uLCD.printf("  10Hz"); //Default Green on black text
 
-    uLCD.text_width(2.5); //4X size text
+     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(GREEN);
-    uLCD.printf("  300Hz"); //Default Green on black text
+    uLCD.printf("  11Hz"); //Default Green on black text
 }
 
 else if(i==3){
 // basic printf demo = 16 by 18 characters on screen
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
+    uLCD.locate(0,0);
+    uLCD.color(GREEN);
+    uLCD.printf("  1Hz"); //Default Green on black text
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
     uLCD.locate(0,2);
     uLCD.color(GREEN);
-    uLCD.printf("  100Hz"); //Default Green on black text
+    uLCD.printf("  2Hz"); //Default Green on black text
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,4);
+    uLCD.color(RED);
+    uLCD.printf("  10Hz"); //Default Green on black text
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,6);
+    uLCD.color(GREEN);
+    uLCD.printf("  11Hz"); //Default Green on black text
+}
+
+else if(i==4){
+// basic printf demo = 16 by 18 characters on screen
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,0);
+    uLCD.color(GREEN);
+    uLCD.printf("  1Hz"); //Default Green on black text
+
+    uLCD.text_width(2.5); //4X size text
+    uLCD.text_height(2.5);
+    uLCD.locate(0,2);
+    uLCD.color(GREEN);
+    uLCD.printf("  2Hz"); //Default Green on black text
 
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,4);
     uLCD.color(GREEN);
-    uLCD.printf("  200Hz"); //Default Green on black text
+    uLCD.printf("  10Hz"); //Default Green on black text
 
     uLCD.text_width(2.5); //4X size text
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(RED);
-    uLCD.printf("  300Hz"); //Default Green on black text
+    uLCD.printf("  11Hz"); //Default Green on black text
 }
 }
 
