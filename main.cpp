@@ -23,24 +23,27 @@ int main()
             select++;
         //if(mypin_up==0)
             //select--;
-        if(select>3)
+        if(select>4)
             select=1;
         if(select<1)
-            select=3;
+            select=4;
         if(mypin_select==0){
             if(select==1){
-                j=77;
-                break;
-            }
-
-            else if(select==2){
                 j=1;
                 break;
             }
 
-            else if(select==3){
+            else if(select==2){
                 j=2;
-                
+                break;
+            }
+
+            else if(select==3){
+                j=10;
+                break;
+            }    
+            else if(select==4){
+                j=11;
                 break;
             }
         }
