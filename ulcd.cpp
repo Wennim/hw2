@@ -2,6 +2,9 @@
 #include "uLCD_4DGL.h"
 uLCD_4DGL uLCD(D1, D0, D2); // serial tx, serial rx, reset pin;
 AnalogOut  aout(PA_4);
+AnalogIn Ain(A0);
+AnalogOut Aout(PA_5);
+float ADCdata;
 
 
 void ulcd_display(int i){
@@ -104,6 +107,17 @@ while (1)
             ThisThread::sleep_for(1ms/j);
             }
             aout = 0.00f;
+
 }
+}
+
+void sampling(){
+
+   while(1){
+    ADCdata = Ain;
+    printf("%f\r\n", ADCdata);
+    Aout = ADCdata;
+    ThisThread::sleep_for(1ms);
+  }
 
 }
