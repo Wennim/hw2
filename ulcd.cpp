@@ -104,9 +104,8 @@ while (1)
     for (float i = 0.96f; i >= 0.00; i -= 0.0096f) {
             aout = i;
             
-            ThisThread::sleep_for(1ms/j);
+        ThisThread::sleep_for(10ms/j);
             }
-            aout = 0.00f;
 
 }
 }
@@ -115,7 +114,7 @@ void sampling(){
 
    while(1){
     ADCdata = Ain;
-    printf("%f\r\n", ADCdata);
+    printf("%f\n", ADCdata);
     Aout = ADCdata;
     ThisThread::sleep_for(1ms);
   }

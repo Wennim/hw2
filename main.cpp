@@ -16,7 +16,6 @@ int main()
    mypin_down.mode(PullNone);
    mypin_up.mode(PullNone);
    mypin_select.mode(PullNone);
-   //thread.start(callback(&queue, &EventQueue::dispatch_forever));
    // press the button and see the console / led change
    while (1)
     {    
@@ -41,6 +40,7 @@ int main()
 
             else if(select==3){
                 j=2;
+                
                 break;
             }
         }
