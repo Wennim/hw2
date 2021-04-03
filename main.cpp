@@ -4,8 +4,8 @@
 using namespace std::chrono;
 
 DigitalIn mypin_down(PC_2);
-DigitalIn mypin_up(PC_4);
-DigitalIn mypin_select(PC_3);
+DigitalIn mypin_up(PC_3);
+DigitalIn mypin_select(PC_4);
 Thread thread;
 
 int main()
@@ -21,8 +21,8 @@ int main()
     {    
         if (mypin_down==0)
             select++;
-        //if(mypin_up==0)
-            //select--;
+        if(mypin_up==0)
+            select--;
         if(select>4)
             select=1;
         if(select<1)
@@ -43,7 +43,7 @@ int main()
                 break;
             }    
             else if(select==4){
-                j=11;
+                j=20;
                 break;
             }
         }
@@ -52,9 +52,8 @@ int main()
         ulcd_display(select);
         
    }
-    thread.start(sampling);
+   thread.start(sampling);
     wave(j);
- 
-  
+   
 }
 
