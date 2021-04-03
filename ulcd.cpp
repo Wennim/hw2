@@ -4,7 +4,7 @@ uLCD_4DGL uLCD(D1, D0, D2); // serial tx, serial rx, reset pin;
 AnalogOut  aout(PA_4);
 AnalogIn Ain(A0);
 AnalogOut Aout(PA_5);
-float ADCdata;
+float ADCdata[96];
 
 
 void ulcd_display(int i){
@@ -34,7 +34,7 @@ if(i==1){
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(GREEN);
-    uLCD.printf("  11Hz"); //Default Green on black text
+    uLCD.printf("  20Hz"); //Default Green on black text
 
 }
 
@@ -62,7 +62,7 @@ else if(i ==2){
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(GREEN);
-    uLCD.printf("  11Hz"); //Default Green on black text
+    uLCD.printf("  20Hz"); //Default Green on black text
 }
 
 else if(i==3){
@@ -89,7 +89,7 @@ else if(i==3){
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(GREEN);
-    uLCD.printf("  11Hz"); //Default Green on black text
+    uLCD.printf("  20Hz"); //Default Green on black text
 }
 
 else if(i==4){
@@ -116,7 +116,7 @@ else if(i==4){
     uLCD.text_height(2.5);
     uLCD.locate(0,6);
     uLCD.color(RED);
-    uLCD.printf("  11Hz"); //Default Green on black text
+    uLCD.printf("  20Hz"); //Default Green on black text
 }
 }
 
@@ -124,22 +124,23 @@ void wave(int j){
 
 while (1)
 {
-    for (float i = 0.96f; i >= 0.00; i -= 0.0096f) {
+    for (float i = 0.93f; i >= 0.00; i -= j*0.0096f) {
             aout = i;
             
-        ThisThread::sleep_for(10ms/j);
+        ThisThread::sleep_for(10ms);
             }
 
 }
 }
 
 void sampling(){
-
-   while(1){
-    ADCdata = Ain;
-    printf("%f\n", ADCdata);
-    Aout = ADCdata;
+int i=0;
+   while(i<96){
+    ADCdata[i] = Ain;
+    printf("%f\n", ADCdata[i]);
+    Aout = ADCdata[i];
     ThisThread::sleep_for(1ms);
+    i++;
   }
-
 }
+
